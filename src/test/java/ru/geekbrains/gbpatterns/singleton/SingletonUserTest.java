@@ -1,8 +1,8 @@
 package ru.geekbrains.gbpatterns.singleton;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import ru.geekbrains.gbpatterns.generative.singleton.Mashine;
+import ru.geekbrains.gbpatterns.generative.singleton.SingletonUser;
 
 class SingletonUserTest {
 
@@ -18,9 +18,9 @@ class SingletonUserTest {
     // паттерн prototype
     @Test
     public void testClone() throws CloneNotSupportedException {
-
-        Mashine mashine = new Mashine();
-        mashine.clone();
+//
+//        Mashine mashine = new Mashine();
+//        mashine.clone();
     }
 
 }
