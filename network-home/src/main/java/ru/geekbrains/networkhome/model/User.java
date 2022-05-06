@@ -90,6 +90,10 @@ public class User {
             this.newUser = new User();
         }
 
+        public Builder id(Long id){
+            newUser.setId(id);
+            return this;
+        }
         public Builder login(String login){
             newUser.setLogin(login);
             return this;
