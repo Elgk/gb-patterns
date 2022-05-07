@@ -6,20 +6,14 @@ import ru.geekbrains.networkhome.model.Message;
 @Component
 public class MessageFinder {
 
-    private final ConnectionManager connectionManager;
-
-    public MessageFinder(ConnectionManager connectionManager) {
-        this.connectionManager = connectionManager;
+    public MessageFinder() {
     }
 
      public Message find(Long id){
          Message message = MessageIdentityMap.get(id);
          if (message == null){
-          //   message =  MapperRegistry.getInstance().getMapper(Message.class).findById(id);
-             MessageMapper mapper = new MessageMapper(connectionManager);
-             message = mapper.findById(id);
+             message = (Message) MapperRegistry.getInstance().getMapper(Message.class).findById(id);
              MessageIdentityMap.add(message);
-
          }
          return message;
      }

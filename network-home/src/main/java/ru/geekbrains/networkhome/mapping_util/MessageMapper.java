@@ -17,7 +17,6 @@ public class MessageMapper implements DomainObjMapper<Message>{
     public MessageMapper(ConnectionManager connectionManager) {
         this.connectionManager = connectionManager;
         currentConnection = connectionManager.getConnection();
-        MapperRegistry.getInstance().add(Message.class, this);
     }
 
     public void insert(Message message){

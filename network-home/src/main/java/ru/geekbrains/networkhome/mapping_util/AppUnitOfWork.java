@@ -57,6 +57,12 @@ public class AppUnitOfWork {
             }
         }
     }
+
+    public void registryClean(){
+        newObjects.clear();
+        dirtyObjects.clear();
+        removeObjects.clear();
+    }
     
     public void commit(){
         insertNew();

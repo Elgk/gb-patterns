@@ -19,11 +19,11 @@ public class MapperRegistry {
 
     private final static Map<Class<? extends DomainObj>, DomainObjMapper<? extends DomainObj> > mappers  = new HashMap<>();
 
-    public DomainObjMapper<DomainObj> getMapper(Class<? extends DomainObj> aClass){
+    public static DomainObjMapper<DomainObj> getMapper(Class<? extends DomainObj> aClass){
         return (DomainObjMapper<DomainObj>) mappers.get(aClass);
     }
 
-    public  void add(Class<? extends DomainObj> aClass, DomainObjMapper<? extends DomainObj> mapper){
+    public static void add(Class<? extends DomainObj> aClass, DomainObjMapper<? extends DomainObj> mapper){
        mappers.put(aClass, mapper);
     }
 

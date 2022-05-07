@@ -18,19 +18,16 @@ public class MessageController {
     public Message findMessage(@PathVariable Long id){
         AppUnitOfWork.newCurrent();
         return messageService.find(id);
-
     }
 
     @PostMapping
     public Message createMessage(@RequestBody Message message){
        return messageService.create(message.getContent(), message.getSender(), message.getReceiver());
-
     }
 
     @PutMapping
     public void updateMessage(@RequestBody Message message){
         messageService.update(message.getContent(), message.getId());
-
     }
 
     @DeleteMapping("/{id}")
@@ -38,8 +35,9 @@ public class MessageController {
         messageService.delete(id);
     }
 
-    @GetMapping("/save/{id}")
-    public void saveMessage(@PathVariable Long id){
+    @GetMapping("/save")
+    public void saveMessage(){
         AppUnitOfWork.getCurrent().commit();
+        AppUnitOfWork.getCurrent().registryClean();
     }
 }
